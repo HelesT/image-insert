@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Carregar e exibir imagens</title>
+</head>
+<body>
+    <input type="file" id="imagemInput" accept="image/*" multiple>
+    <button onclick="exibirImagens()">Exibir Imagens</button>
+    <div id="container"></div>
+
+    <script>
+        function exibirImagens() {
+            const imagemInput = document.getElementById('imagemInput');
+            const container = document.getElementById('container');
+
+            container.innerHTML = ''; // Limpa o conteúdo anterior
+
+            for (let i = 0; i < imagemInput.files.length; i++) {
+                const imagem = document.createElement('img');
+                imagem.src = URL.createObjectURL(imagemInput.files[i]);
+                imagem.style.width = '100px';
+                container.appendChild(imagem);
+            }
+        }
+    </script>
+</body>
+</html>

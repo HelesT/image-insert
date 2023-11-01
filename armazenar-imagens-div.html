@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Carregar e Exibir Imagem</title>
+</head>
+<body>
+    <button id="displayButton">Exibir Imagem</button>
+    <div id="div_das_imagens">
+        <img src="img_teste.jpg" width="100px">
+    </div>
+
+    <script>
+        document.getElementById('displayButton').addEventListener('click', function() {
+            // Selecionar a imagem na div
+            var imgElement = document.querySelector('#div_das_imagens img');
+
+            // Criar um elemento canvas para converter a imagem em base64
+            var canvas = document.createElement('canvas');
+            var ctx = canvas.getContext('2d');
+            canvas.width = imgElement.width;
+            canvas.height = imgElement.height;
+            ctx.drawImage(imgElement, 0, 0, imgElement.width, imgElement.height);
+
+            // Converter a imagem em base64
+            var base64Image = canvas.toDataURL('image/jpeg');
+
+            // Agora você pode enviar 'base64Image' para o seu banco de dados
+            console.log('Imagem convertida em base64:', base64Image);
+        });
+    </script>
+</body>
+</html>
