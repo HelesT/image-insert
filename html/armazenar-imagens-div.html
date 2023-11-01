@@ -4,13 +4,13 @@
     <title>Carregar e Exibir Imagem</title>
 </head>
 <body>
-    <button id="displayButton">Exibir Imagem</button>
+    <button onclick="EnviarImagens()">Enviar imagem</button>
     <div id="div_das_imagens">
         <img src="../img/img_teste.jpg" width="100px">
     </div>
 
     <script>
-        document.getElementById('displayButton').addEventListener('click', function() {
+        function EnviarImagens(){
             // Selecionar a imagem na div
             var imgElement = document.querySelector('#div_das_imagens img');
 
@@ -26,7 +26,7 @@
 
             // Agora você pode enviar 'base64Image' para o seu banco de dados
             console.log('Imagem convertida em base64:', base64Image);
-        });
+        };
     </script>
 </body>
 </html>
