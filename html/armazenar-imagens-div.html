@@ -15,9 +15,11 @@
 
     <script>
 
-        var base64Images = [];
-
         function EnviarImagens() {
+
+            //Resetar vetor das imagens
+            var base64Images = [];
+            
             // Limpa o console
             console.clear();
 
@@ -42,8 +44,8 @@
                     var base64Image = canvas.toDataURL('image/jpeg');
                     base64Images.push(base64Image);
 
-                    // Agora você pode enviar 'base64Image' para o seu banco de dados ou fazer o que desejar com ele
-                    console.log('Imagem ' + (index + 1) + ' convertida em base64:', base64Image);
+                    // // Agora você pode enviar 'base64Image' para o seu banco de dados ou fazer o que desejar com ele
+                    // console.log('Imagem ' + (index + 1) + ' convertida em base64:', base64Image);
 
                     // Se todas as imagens foram processadas, você pode realizar alguma ação com o vetor base64Images
                     if (index === imgElements.length - 1) {
