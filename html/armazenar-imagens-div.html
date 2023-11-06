@@ -2,7 +2,7 @@
 <html>
 <head>
     <title>Carregar e Exibir Imagem</title>
-    <script src="https://code.jquery.com/jquery-3.7.0.min.js"></script>
+    <script src="../js/jquery-3.7.1.min.js"></script>
 </head>
 <body>
     <button onclick="EnviarImagens()">Salvar Imagens</button>
@@ -14,11 +14,13 @@
     </div>
 
     <script>
+        
+        var base64Images = [];
 
         function EnviarImagens() {
 
             //Resetar vetor das imagens
-            var base64Images = [];
+            base64Images = [];
             
             // Limpa o console
             console.clear();
